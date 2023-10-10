@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -8,20 +9,6 @@ namespace Inheritance
         {
             // TODO Be sure to follow best practice when creating your classes
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
-
-
 
             /*Create an object of your Bird class
              *  give values to your members using the object of your Bird class
@@ -29,11 +16,37 @@ namespace Inheritance
              * Creatively display the class member values 
              */
 
+            var eagle = new Bird();
+            eagle.Name = "Eagle";
+            eagle.HaveTeeth = false;
+            eagle.SkinType = "feathers";
+            eagle.CanFly = true;
+            eagle.WingSpan = 6;
+            eagle.EdibleByHumans = false;
+
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
-             *  
              * Creatively display the class member values 
              */
+
+            var lizard = new Reptile();
+            lizard.Name = "Gecko";
+            lizard.HaveTeeth = true;
+            lizard.SkinType = "scales";
+
+
+            var zoo = new List<Animal>() { eagle, lizard };
+
+            foreach (var animal in zoo)
+            {
+                Console.WriteLine($"This is a {animal.Name} and it has a {animal.SkinType}");
+
+            }
+
         }
+
+
+
+
     }
 }
